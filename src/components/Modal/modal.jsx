@@ -57,6 +57,13 @@ function XModal() {
     closeModal();
   };
 
+
+  const handleOverlayClick = (e) => {
+    if(e.target.classList.contains('overlay')) {
+      closeModal();
+    }
+  }
+
   return (
     <div className="initial-render">
       <h1>User Details Modal</h1>
@@ -71,6 +78,7 @@ function XModal() {
         className="modal"
         overlayClassName="overlay"
       >
+        <div className='overlay' onClick={handleOverlayClick}>
         <div className="modal-content">
           <h2>Fill Details</h2>
           <form onSubmit={handleSubmit} className="form">
@@ -126,6 +134,7 @@ function XModal() {
               Submit
             </button>
           </form>
+          </div>
         </div>
       </Modal>
     </div>
