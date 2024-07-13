@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
-function XModal() {
+function ModalComponent() {
   const [modalOpen, setModalOpen] = useState(false);
   const [formValues, setFormValues] = useState({
     username: '',
@@ -141,4 +141,4 @@ function XModal() {
   );
 }
 
-export default XModal;
+export default ModalComponent;

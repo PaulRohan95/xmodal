@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import XModal from './components/Modal/Modal';
+import ModalComponent from './components/Modal/Modal-component';
 
 
 function App() {
   return (
     <div>
-        <XModal />
+        <ModalComponent />
     </div>
   );
 }
