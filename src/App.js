@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
 import './App.css';
-
-
-
 
 function ModalComponent() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -59,80 +55,74 @@ function ModalComponent() {
     closeModal();
   };
 
-
   return (
     <div className="initial-render">
       <h1>User Details Modal</h1>
       <button className="submit-button" onClick={openModal}>
         Open Form
       </button>
-      <Modal
-        isOpen={modalOpen}
-        onRequestClose={closeModal}
-        shouldCloseOnOverlayClick={true}
-        contentLabel="User Details Modal"
-        className="modal"
-        overlayClassName="overlay"
-      >
-        <div className="modal">
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-          <h2>Fill Details</h2>
-          <form onSubmit={handleSubmit} className="form">
-            <label>
-              Username:
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={formValues.username}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <br />
-            <label>
-              Email Address:
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formValues.email}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <br />
-            <label>
-              Phone Number:
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formValues.phone}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <br />
-            <label>
-              Date of Birth:
-              <input
-                type="date"
-                id="dob"
-                name="dob"
-                value={formValues.dob}
-                onChange={handleChange}
-                required
-              />
-            </label>
-            <br />
-            <button type="submit" className="submit-button">
-              Submit
-            </button>
-          </form>
+      {modalOpen && (
+        <div className="overlay" onClick={closeModal}>
+          <div className="modal">
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2>Fill Details</h2>
+            <form onSubmit={handleSubmit} className="form">
+              <label>
+                Username:
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  value={formValues.username}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <br />
+              <label>
+                Email Address:
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formValues.email}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <br />
+              <label>
+                Phone Number:
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formValues.phone}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <br />
+              <label>
+                Date of Birth:
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  value={formValues.dob}
+                  onChange={handleChange}
+                  required
+                />
+              </label>
+              <br />
+              <button type="submit" className="submit-button">
+                Submit
+              </button>
+            </form>
+          </div>
           </div>
         </div>
-      </Modal>
+      )}
     </div>
   );
 }
