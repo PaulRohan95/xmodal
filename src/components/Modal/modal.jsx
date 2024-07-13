@@ -78,7 +78,7 @@ function XModal() {
         className="modal"
         overlayClassName="overlay"
       >
-        <div className='overlay' onClick={handleOverlayClick}>
+        <div onClick={handleOverlayClick}>
         <div className="modal-content">
           <h2>Fill Details</h2>
           <form onSubmit={handleSubmit} className="form">
