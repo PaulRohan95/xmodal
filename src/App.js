@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import './App.css';
-// import ModalComponent from './components/Modal/Modal-component';
 
 
 Modal.setAppElement('#root');
@@ -62,7 +61,7 @@ function ModalComponent() {
 
 
   const handleOverlayClick = (e) => {
-    if(e.target.classList.contains('overlay')) {
+    if(e.target.classList.contains('ReactModal__Overlay')) {
       closeModal();
     }
   }
@@ -82,7 +81,7 @@ function ModalComponent() {
         overlayClassName="overlay"
       >
         <div onClick={handleOverlayClick}>
-        <div className="modal-content">
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <h2>Fill Details</h2>
           <form onSubmit={handleSubmit} className="form">
             <label>
