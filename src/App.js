@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import './App.css';
 
 
-Modal.setAppElement('#root');
+
 
 function ModalComponent() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -60,12 +60,6 @@ function ModalComponent() {
   };
 
 
-  // const handleOverlayClick = (e) => {
-  //   if(e.target.classList.contains('ReactModal__Overlay')) {
-  //     closeModal();
-  //   }
-  // }
-
   return (
     <div className="initial-render">
       <h1>User Details Modal</h1>
@@ -80,6 +74,7 @@ function ModalComponent() {
         className="modal"
         overlayClassName="overlay"
       >
+        <div className="modal">
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <h2>Fill Details</h2>
           <form onSubmit={handleSubmit} className="form">
@@ -136,6 +131,7 @@ function ModalComponent() {
             </button>
           </form>
           </div>
+        </div>
       </Modal>
     </div>
   );
