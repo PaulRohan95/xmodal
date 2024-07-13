@@ -60,11 +60,11 @@ function ModalComponent() {
   };
 
 
-  const handleOverlayClick = (e) => {
-    if(e.target.classList.contains('ReactModal__Overlay')) {
-      closeModal();
-    }
-  }
+  // const handleOverlayClick = (e) => {
+  //   if(e.target.classList.contains('ReactModal__Overlay')) {
+  //     closeModal();
+  //   }
+  // }
 
   return (
     <div className="initial-render">
@@ -80,7 +80,6 @@ function ModalComponent() {
         className="modal"
         overlayClassName="overlay"
       >
-        <div onClick={handleOverlayClick}>
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <h2>Fill Details</h2>
           <form onSubmit={handleSubmit} className="form">
@@ -137,7 +136,6 @@ function ModalComponent() {
             </button>
           </form>
           </div>
-        </div>
       </Modal>
     </div>
   );
