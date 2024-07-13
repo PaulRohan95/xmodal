@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import XModal from './components/Modal/modal';
+import XModal from './components/Modal/Modal';
+
 
 function App() {
   return (

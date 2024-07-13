@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 
-Modal.setAppElement('#root');
+// Modal.setAppElement('#root');
 
 function XModal() {
   const [modalOpen, setModalOpen] = useState(false);
